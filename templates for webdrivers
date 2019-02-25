@@ -1,0 +1,52 @@
+#Chrome
+
+from selenium import webdriver
+import os
+
+class RunChromeTest():
+
+    def testMethod(self):
+
+        driverLocation = "C:\PyWebAuto\chromedriver.exe"
+        os.environ["webdriver.chrome.driver"] = driverLocation
+
+        driver = webdriver.Chrome(driverLocation)
+
+        driver.get("http://64.233.164.139")
+
+x = RunChromeTest()
+x.testMethod()
+
+#Internet Explorer
+
+from selenium import webdriver
+import os
+
+class RunIETest():
+
+    def testMethod(self):
+
+        driverLocation = "C:\PyWebAuto\IEDriverServer.exe"
+        os.environ["webdriver.ie.driver"] = driverLocation
+
+        driver = webdriver.Ie(driverLocation)
+
+        driver.get("http://64.233.164.139")
+
+x = RunIETest()
+x.testMethod()
+
+#FireFox
+
+from selenium import webdriver
+
+class RunFireFoxTest():
+
+    def testMethod(self):
+
+        driver = webdriver.Firefox(executable_path="C:\PyWebAuto\geckodriver.exe")
+
+        driver.get("http://www.cnn.com")
+
+x = RunFireFoxTest()
+x.testMethod()
